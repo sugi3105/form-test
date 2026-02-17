@@ -1,0 +1,72 @@
+.contact {
+    max-width: 800px;
+    margin: 70px auto;
+    font-family: sans-serif;
+}
+
+.contact__title {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+.form__group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form__group label {
+    width: 30%;
+    font-weight: bold;
+}
+
+.form__group label span {
+    color: red;
+    margin-left: 5px;
+}
+
+.form__group input,
+.form__group textarea,
+.form__group salect {
+    width: 70%;
+    padding: 8px;
+    font-size: 15px;
+}
+
+.form__group textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+.form__group input[type="radio"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.form__group label + label {
+    margin-right: 15px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-left: 40px;
+}
+
+.form__button {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.form__button button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.form__button button:hover {
+    opacity: 0,8;
+}

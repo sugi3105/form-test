@@ -1,0 +1,30 @@
+.thanks {
+    max-width: 600px;
+    margin: 100px auto;
+    text-align: center;
+    font-family: sans-serif;
+    margin-top: 50px;
+}
+
+.thanks__title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.thanks__text {
+    margin-bottom: 40px;
+}
+
+.thanks__button a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.thanks .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+}

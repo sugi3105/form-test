@@ -1,0 +1,57 @@
+.confirm {
+   width: 100%;
+   max-width: 800px;
+   margin: 60px auto;
+   font-family: sans-serif;
+}
+
+.confirm__title {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 50px;
+}
+
+.confirm__group {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 15px 0;
+}
+
+.confirm__label {
+    width: 30%;
+    font-weight: bold;
+}
+
+.confirm__value {
+    width: 70%;
+    white-space: pre-wap;
+}
+
+.confirm___button {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.confirm___button button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.confirm___button button:hover {
+    opacity: 0.8;
+}
+
+.confirm form:last-child {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.confirm form:last-child button {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+}
