@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\Category;
+use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
@@ -21,7 +22,12 @@ class ContactController extends Controller
          //$category = Category::find($data['category_id']);
         return view('contact.confirm', compact('data'));
     }
+
     public function thanks(Request $request)
+    {
+    return view ('contact.thanks');
+    }
+    public function store(ContactRequest $request)
     {
         //$data = $request->validate();
           $data = $request->all();
