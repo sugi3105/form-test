@@ -6,32 +6,32 @@
 
 .contact__title {
     text-align: center;
-    font-size: 25px;
+    font-size: 28px;
     margin-bottom: 40px;
 }
 
 .form__group {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .form__group label {
-    width: 30%;
-    font-weight: bold;
+    width: 220px;
+    font-size: 14px;
 }
 
 .form__group label span {
-    color: red;
-    margin-left: 5px;
+    color: #c00;
+    margin-left: 4px;
 }
 
 .form__group input,
 .form__group textarea,
 .form__group salect {
-    width: 70%;
-    padding: 8px;
-    font-size: 15px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
 }
 
 .form__group textarea {
