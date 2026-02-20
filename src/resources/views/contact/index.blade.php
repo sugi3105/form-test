@@ -9,6 +9,7 @@
     <h2>お問い合わせ</h2>
 
     <form class="form" action="contact/confirm" method="post">
+    
     @csrf
  <div class="form__group">
         <label>お名前</label>
@@ -87,11 +88,15 @@
     <label>お問い合わせの内容</label>
     <span class="form__label--required">※</span>
     <textarea name="detail">{{ old('detail') }}</textarea>
-    <p class="error">{{ $errors->first('datail') }}</p>     
+    <p class="error">{{ $errors->first('detail') }}</p>     
  </div>
 
  <div class="form__button">
     <button type="submit">確認画面</button>
+ </div>
+ <div class="delete-form__button">
+   
+   <button class="delete-form__button-submit" type="submit">削除</button>
  </div>
  </form>
 </div>

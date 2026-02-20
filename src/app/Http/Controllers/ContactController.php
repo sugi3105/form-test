@@ -47,5 +47,10 @@ class ContactController extends Controller
     
         return view('contact.thanks');
     }
+    //public function destroy(Request $request)
+//{
+   // data::find($request->id)->delete();
+    //return redirect('/')->with('message', '削除しました');
+//}
     //
 }

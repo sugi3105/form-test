@@ -70,12 +70,12 @@
             <p>{{ $data['detail'] }}</p>
             <input type="hidden" name="detail" value="{{ $data['detail'] }}">
         </div>
-        <div class="confirm-bittons">
+        <div class="confirm-buttons">
             <button type="submit"class="submit-btn">送信</button>
         </div>
     </form>
-
     <form class="form" action="{{ route('contact.index') }}" method="get">
+    
         <button type="submit"class="back-btn>修正</button>
     </form>
 </div>
