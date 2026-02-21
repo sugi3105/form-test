@@ -18,12 +18,20 @@ use App\Http\Controllers\ContactController;
 //Route::get('/', function () {
     //return view('welcome');
 //});
-Route::get('/contact', [ContactController::class, 'index']);
-Route::post('/contact/confirm', [ContactController:: class, 'confirm']);
-Route::post('/contact/thanks', [ContactController::class, 'thanks']);
+Route::get('/', [ContactController::class, 'index'])
+      ->name('contact.index');
+Route::post('/confirm', [ContactController:: class, 'confirm'])
+      ->name('contact.confirm');
+Route::post('/thanks', [ContactController::class, 'store'])
+      ->name('contact.store');
+Route::get('/thanks', [ContactController:: class, 'thanks'])
+      ->name('contact.thanks');
+
+
+
 //Route::delete('/contact/delete', [ContactController::class, 'destroy']);
 Route::middleware('auth')->group(function () {
-Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::get('/admin', [ContactController::class, 'admin']);
 //Route::get('/', [AuthController::class, 'index']);
-     Route::get('/', [AuthController::class, 'index']);
+ Route::post('/delete', [ContactController::class, 'destroy']);
  });

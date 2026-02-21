@@ -19,11 +19,13 @@ class CreateContactsTable extends Migration
                   ->constrained('categories')
                   ->cascade0nDelete();
             $table->string('name');
+            $table->string('gender');
             $table->string('email');
             $table->string('tel');
+            $table->string('postcode');
             $table->string('address');
             $table->string('building')->nullable();
-            $table->text('content'); 
+            $table->text('detail'); 
             $table->timestamps();
         });
     }

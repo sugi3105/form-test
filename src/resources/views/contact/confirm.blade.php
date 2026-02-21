@@ -9,7 +9,7 @@
 <div class="confirm__heading">
     <h2>お問い合わせ内容の確認</h2>
 
-    <form class="form" action="/contact/thanks" method="post">
+    <form class="form" action="/thanks" method="post">
         @csrf
 
         <div class="confirm__group">

@@ -17,6 +17,7 @@ class ContactController extends Controller
     public function confirm(ContactRequest $request)
     {
          $data = $request->validated();
+         $category = Category::find($data['category_id']);
        
          //$contact = $request->all();
          //$category = Category::find($data['category_id']);

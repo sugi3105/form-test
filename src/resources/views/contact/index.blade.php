@@ -8,7 +8,7 @@
 <div class="container">
     <h2>contact</h2>
 
-    <form class="form" action="contact/confirm" method="post">
+    <form class="form" action="/confirm" method="post">
     
     @csrf
  <div class="form__group">
@@ -110,9 +110,9 @@
     <select name="category_id">
         <option value="">選択してください</option>
         @foreach ($categories as $category)
-        <option value="{{ $category->id }}">
+        <option value="{{ $category->id }}"
         {{ old('category_id') == $category->id ? 'selected' : '' }}>
-        {{ $category->content}}
+        {{ $category->name}}
         </option>
         @endforeach
     </select>
