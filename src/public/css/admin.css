@@ -1,0 +1,86 @@
+/* 共通 */
+body {
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+}
+
+/* ヘッダー */
+.header {
+    background: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    text-align: center;
+    font-size: 24px;
+}
+
+/* メイン */
+.admin-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.admin-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* 検索フォーム */
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-form input,
+.search-form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.search-form button {
+    background: #555;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+}
+
+/* エクスポート */
+.export-btn {
+    margin-bottom: 10px;
+    padding: 8px 16px;
+    border: 1px solid #555;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* テーブル */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.admin-table th {
+    background: #8b7e74;
+    color: #fff;
+    padding: 10px;
+}
+
+.admin-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+/* 詳細ボタン */
+.detail-btn {
+    background: none;
+    border: 1px solid #555;
+    padding: 5px 10px;
+    cursor: pointer;
+}

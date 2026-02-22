@@ -44,9 +44,19 @@ class ContactController extends Controller
             //'address' => $data['address'],
             //'building' => $data['building'],
             //'detail' => $data['detail'],
-        //]);
+        
     
         return view('contact.thanks');
+}
+     public function admin(Request $request)
+    {
+     $query = Contact::query();
+
+     $contacts = $query->paginate(10);
+
+     $categories = Category::all();
+     
+     return view('admin.index', compact('contacts', 'categories'));
     }
     //public function destroy(Request $request)
 //{

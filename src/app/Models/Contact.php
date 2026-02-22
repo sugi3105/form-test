@@ -18,7 +18,7 @@ class Contact extends Model
         'postcode',
         'address',
         'building',
-        'content',
+        'detail',
     ];
 
     public function category()

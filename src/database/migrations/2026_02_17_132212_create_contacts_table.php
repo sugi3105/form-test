@@ -25,7 +25,7 @@ class CreateContactsTable extends Migration
             $table->string('postcode');
             $table->string('address');
             $table->string('building')->nullable();
-            $table->text('detail'); 
+            $table->text('detail')->nullable(); 
             $table->timestamps();
         });
     }

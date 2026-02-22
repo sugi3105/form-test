@@ -16,10 +16,12 @@ class ContactFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->safeEmail(),
+            'postcode' => $this->faker->postcode(),
             'tel' => $this->faker->phoneNumber(),
+            'gender' => $this->faker->randomElement(['男性', '女性', 'その他']),
             'address' => $this->faker->address(),
             'building' => $this->faker->optional()->secondaryAddress(),
-            'content' => $this->faker->realText(50),
+            'detail' => $this->faker->realText(50),
             'category_id' => \App\Models\Category::inRandomOrder()->first()->id,
             //
         ];

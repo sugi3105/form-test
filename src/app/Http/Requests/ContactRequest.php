@@ -32,7 +32,7 @@ class ContactRequest extends FormRequest
             'address' =>'required|string|max:255',
             'building' =>'nullable|string|max:255',
             'category_id' =>'required|exists:categories,id', 
-            'detail' =>'required|string|max:120', 
+            'detail' =>'nullable|string|max:120', 
 
             //
         ];
