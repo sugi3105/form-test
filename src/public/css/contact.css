@@ -1,72 +1,59 @@
-.contact {
-    max-width: 800px;
-    margin: 70px auto;
-    font-family: sans-serif;
+.contact-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.contact__title {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 40px;
+.page-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 40px;
 }
 
-.form__group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 25px;
+form {
+  width: 100%;
 }
 
-.form__group label {
-    width: 220px;
-    font-size: 14px;
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.form__group label span {
-    color: #c00;
-    margin-left: 4px;
+.form-row label {
+  width: 200px;
+  font-weight: bold;
 }
 
-.form__group input,
-.form__group textarea,
-.form__group salect {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
+.form-row span {
+  color: red;
+  margin-left: 4px;
 }
 
-.form__group textarea {
-    resize: vertical;
-    height: 120px;
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 400px;
+  padding: 8px;
 }
 
-.form__group input[type="radio"] {
-    width: auto;
-    margin-right: 5px;
+.radio-group {
+  display: flex;
+  gap: 20px;
 }
 
-.form__group label + label {
-    margin-right: 15px;
+textarea {
+  height: 120px;
 }
 
-.error {
-    color: red;
-    font-size: 12px;
-    margin-left: 40px;
+.form-submit {
+  text-align: center;
+  margin-top: 40px;
 }
 
-.form__button {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.form__button button {
-    background-color: #000;
-    color: #fff;
-    padding: 10px 40px;
-    border: none;
-    cursor: pointer;
-}
-
-.form__button button:hover {
-    opacity: 0,8;
+.form-submit button {
+  background: #82756A;
+  color: #fff;
+  padding: 10px 40px;
+  border: none;
+  cursor: pointer;
 }

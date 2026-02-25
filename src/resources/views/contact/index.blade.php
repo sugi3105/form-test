@@ -1,138 +1,127 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/index.css') }}">
+<link rel="stylesheet" href="{{ asset('css/contact.css') }}">
 @endsection
 
 @section('content')
-<div class="container">
-    <h2>contact</h2>
+<div class="contact-wrapper">
 
-    <form class="form" action="/confirm" method="post">
-    
+  <h1 class="page-title">Contact</h1>
+
+  <form class="form" action="/confirm" method="post">
     @csrf
- <div class="form__group">
-        <label>
-         お名前
-         <span class="form__label--required">※</span>
-        </label>
 
-        <div class="form_input">
-         <input type="text" name="name" value="{{ old('name') }}">
-         <p class="error">{{ $errors->first('name') }}</p>
-        </div>    
- </div>
+    <div class="form-row">
+      <label>お名前<span>※</span></label>
+      <div>
+        <input type="text" name="name" value="{{ old('name') }}">
+        @error('name')
+          <p class="error">{{ $message }}</p>
+        @enderror
+      </div>
+    </div>
 
- <div class="form__group">
+    <div class="form-row">
+      <label>性別<span>※</span></label>
+      <div class="radio-group">
         <label>
-         性別
-          <span class="form__label--required">※</span>
-        </label>
-
-        <div class="form_input">
-        <label>
-        <input type="radio" name="gender" value="1" @checked(old('gender') == '1' )>
-        男性
+          <input type="radio" name="gender" value="1" {{ old('gender') == '1' ? 'checked' : '' }}>
+          男性
         </label>
         <label>
-        <input type="radio" name="gender" value="2" @checked(old('gender') == '2' )>
-        女性
+          <input type="radio" name="gender" value="2" {{ old('gender') == '2' ? 'checked' : '' }}>
+          女性
         </label>
-        <input type="radio" name="gender" value="3" @checked(old('gender') == '3' )>
-        その他
-        </label> 
-        <p class="error">{{ $errors->first('gender') }}</p>
- </div>
+        <label>
+          <input type="radio" name="gender" value="3" {{ old('gender') == '3' ? 'checked' : '' }}>
+          その他
+        </label>
+      </div>
+      @error('gender')
+        <p class="error">{{ $message }}</p>
+      @enderror
+    </div>
 
- <div class="form__group">
-    <label>
-      メールアドレス
-      <span class="form__label--required">※</span>
-    </label>
-
-    <div class="form_input">
+    <div class="form-row">
+      <label>メールアドレス<span>※</span></label>
+      <div>
         <input type="email" name="email" value="{{ old('email') }}">
-        <p class="error">{{ $errors->first('email') }}</p>
+        @error('email')
+          <p class="error">{{ $message }}</p>
+        @enderror
+      </div>
     </div>
- </div>
 
- <div class="form__group">
-    <label>
-      電話番号
-    <span class="form__label--required">※</span>
-    </lavel>
-
-    <div class="form_input">
+    <div class="form-row">
+      <label>電話番号<span>※</span></label>
+      <div>
         <input type="text" name="tel" value="{{ old('tel') }}">
-        <p class="error">{{ $errors->first('tel') }}</p>
+        @error('tel')
+          <p class="error">{{ $message }}</p>
+        @enderror
+      </div>
     </div>
- </div>
 
- <div class="form__group">
-    <label>
-      郵便番号
-   <span class="form__label--required">※</span>
-   </label>
-
-   <div class="form_input">
-        <input type="text" name="postcode" value="{{ old('postcode') }}">
-         <p class="error">{{ $errors->first('postcode') }}</p>
-   </div>
- </div>
-
- <div class="form__group">
-    <label>
-      住所
-    <span class="form__label--required">※</span>
-    </label>
-
-    <div class="form_input">
+    <div class="form-row">
+      <label>住所<span>※</span></label>
+      <div>
         <input type="text" name="address" value="{{ old('address') }}">
-        <p class="error">{{ $errors->first('address') }}</p>
-    </div> 
- </div>
+        @error('address')
+          <p class="error">{{ $message }}</p>
+        @enderror
+      </div>
+    </div>
 
- <div class="form__group">
-    <label>
-      建物名
-    </label>
-    <div class="form_input">
+    <div class="form-row">
+      <label>郵便番号<span>※</span></label>
+      <div>
+        <input type="text" name="postcode" value="{{ old('postcode') }}">
+        @error('postcode')
+          <p class="error">{{ $message }}</p>
+        @enderror
+      </div>
+    </div>
+
+
+    <div class="form-row">
+      <label>建物名</label>
+      <div>
         <input type="text" name="building" value="{{ old('building') }}">
-    </div>  
-        
- </div>
+      </div>
+    </div>
 
- <div class="form__group">
-    <label>
-      お問い合わせの種類
-   <span class="form__label--required">※</span>
-    </label>
-    <select name="category_id">
-        <option value="">選択してください</option>
-        @foreach ($categories as $category)
-        <option value="{{ $category->id }}"
-        {{ old('category_id') == $category->id ? 'selected' : '' }}>
-        {{ $category->name}}
-        </option>
-        @endforeach
-    </select>
-        <p class="error">{{ $errors->first('category_id') }}</p> 
- </div>
+    <div class="form-row">
+      <label>お問い合わせの種類<span>※</span></label>
+      <div>
+        <select name="category_id">
+          <option value="">選択してください</option>
+          <option value="1" {{ old('category_id') == '1' ? 'selected' : '' }}>商品のお届けについて</option>
+          <option value="2" {{ old('category_id') == '2' ? 'selected' : '' }}>商品の交換について</option>
+          <option value="3" {{ old('category_id') == '3' ? 'selected' : '' }}>商品トラブル</option>
+          <option value="4" {{ old('category_id') == '4' ? 'selected' : '' }}>ショップへのお問い合わせ</option>
+          <option value="5" {{ old('category_id') == '5' ? 'selected' : '' }}>その他</option>
+        </select>
+        @error('category_id')
+          <p class="error">{{ $message }}</p>
+        @enderror
+      </div>
+    </div>
 
- <div class="form__group">
-    <label>お問い合わせの内容</label>
-    <span class="form__label--required">※</span>
-    <textarea name="detail">{{ old('detail') }}</textarea>
-    <p class="error">{{ $errors->first('detail') }}</p>     
- </div>
+    <div class="form-row">
+      <label>お問い合わせ内容<span>※</span></label>
+      <div>
+        <textarea name="detail">{{ old('detail') }}</textarea>
+        @error('detail')
+          <p class="error">{{ $message }}</p>
+        @enderror
+      </div>
+    </div>
 
- <div class="form__button">
-    <button type="submit">確認画面</button>
- </div>
- <div class="delete-form__button">
-   
-   <button class="delete-form__button-submit" type="submit">削除</button>
- </div>
- </form>
+    <div class="form-submit">
+      <button type="submit">確認画面</button>
+    </div>
+
+  </form>
 </div>
 @endsection

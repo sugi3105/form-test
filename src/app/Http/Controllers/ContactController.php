@@ -16,12 +16,13 @@ class ContactController extends Controller
     }
     public function confirm(ContactRequest $request)
     {
-         $data = $request->validated();
-         $category = Category::find($data['category_id']);
+        //dd('confirm reached');
+        $data = $request->validated();
+        $category = Category::find($data['category_id']);
        
          //$contact = $request->all();
          //$category = Category::find($data['category_id']);
-        return view('contact.confirm', compact('data'));
+        return view('contact.confirm', compact('data',));
     }
 
     public function thanks(Request $request)
