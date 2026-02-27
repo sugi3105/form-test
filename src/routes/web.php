@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,8 @@ Route::get('/thanks', [ContactController:: class, 'thanks'])
 
 //Route::delete('/contact/delete', [ContactController::class, 'destroy']);
 Route::middleware('auth')->group(function () {
-Route::get('/admin', [ContactController::class, 'admin']);
+Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/search', [AdminController::class, 'index']);
 //Route::get('/', [AuthController::class, 'index']);
- Route::post('/delete', [ContactController::class, 'destroy']);
+ Route::post('/delete', [AdminController::class, 'destroy']);
  });
