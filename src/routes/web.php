@@ -32,8 +32,10 @@ Route::get('/thanks', [ContactController:: class, 'thanks'])
 
 //Route::delete('/contact/delete', [ContactController::class, 'destroy']);
 Route::middleware('auth')->group(function () {
-Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/search', [AdminController::class, 'index']);
 //Route::get('/', [AuthController::class, 'index']);
- Route::post('/delete', [AdminController::class, 'destroy']);
+ Route::post('/admin/{contact}', [AdminController::class, 'destroy'])
+     ->name('admin.destroy');
+
  });

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Category;
 use App\Models\Contact;
+use Illuminate\Http\Request;
+
 
 class AdminController extends Controller
 {
@@ -11,8 +13,11 @@ class AdminController extends Controller
     {
         $query = Contact::query();
 
-        if ($request->filled('name')) {
-            $query->where('name', 'like', '%' . $request->name . '%');
+        if ($request->filled('keyword')) {
+            $query->where(function ($q) use ($request) {
+                $q->where('name', 'like', '%' . $request->keyword . '%')
+                  ->orWhere('email', 'like', '%' . $request->keyword . '%');
+            });
         }
 
         if ($request->filled('gender')) {
@@ -35,6 +40,14 @@ class AdminController extends Controller
             ->paginate(7)
             ->appends($request->query());
 
-        return view('admin', compact('contacts'));
+        $categories = Category::all();
+        
+        return view('admin', compact('contacts', 'categories'));
     }
+    public function destroy(Contact $contact)
+{
+     $contact->delete();
+    return redirect('/')->route('admin.index')
+    ->with('message', '削除しました');
+}
 }

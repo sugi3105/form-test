@@ -33,7 +33,7 @@ body {
 .search-form {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
+    flex-direction: column;
 }
 
 .search-form input,
